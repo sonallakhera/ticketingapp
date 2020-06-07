@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="{% static 'core/main.css' %}">
+	{% if title %}
+		<title>Ticketing Application | {{ title }}</title>
+	{% else %}
+		<title>Ticketing Application</title>
+	{% endif %}
+</head>
+<body>
+	<div class="header">
+		<ul class="navigation">
+			<li class="first_li">Train Ticketing Application</li>
+			<li><a href="{% url 'ticketing-home' %}">Home</a></li>
+			<li><a href="{% url 'ticketing-form' %}">Book Ticket</a></li>
+			<li><a href="{% url 'ticketing-list' %}">Booking List</a></li>
+			<li><a href="{% url 'ticketing-details' %}">Details</a></li>
+		</ul>
+	</div>
+	<div class="container">
+		<div class="banner_image"></div>
+		{% block content %} {% endblock content %}
+	</div>
+	<div class="footer">
+		@copyright - Vidit Lakhera - 2019
+	</div>
+</body>
+</html>

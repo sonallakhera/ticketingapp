@@ -1,0 +1,12 @@
+{% extends 'core/common.html' %}
+{% block content %}
+	<h2 class="subheading">Booking List</h2>
+	{% if bookings %}
+	<div class="content_list_head">List of Bookings</div>
+	<ul class="content_list">
+		{% for booking in bookings %}
+		<li> {{ booking.booking_no }} => {{ booking.passenger_name }} => {{ booking.seat_count }} </li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+{% endblock content %}

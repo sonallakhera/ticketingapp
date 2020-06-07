@@ -1,0 +1,12 @@
+{% extends 'core/common.html' %}
+{% block content %}
+	<h2 class="subheading">Details</h2>
+	{% if schedules %}
+	<div class="content_list_head">Train Schedule</div>
+	<ul class="content_list">
+		{% for schedule in schedules %}
+		<li> {{ schedule.schedule_no }} => {{ schedule.train_no.title }} => {{ schedule.departure_time }} - {{ schedule.arrival_time }} => {{ schedule.departure_station.title }} - {{ schedule.arrival_station.title }}</li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends 'core/common.html' %}
+{% block content %}
+	<h2 class="subheading">Booking Form</h2>
+	{% if form %}
+	<div>
+        <form method="POST">
+        	{% csrf_token %}
+            <fieldset>
+                {{ form }}
+            </fieldset>
+            <div>
+                <button class="submit_button" type="submit">Book Ticket</button>
+            </div>
+        </form>
+    </div>
+    {% elif submitted %}
+    <div>
+    	Thankyou. Your booking has been made.
+    </div>
+    {% endif %}
+{% endblock content %}
